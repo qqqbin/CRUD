@@ -1,0 +1,14 @@
+{% extends 'blogapp/index.html' %}
+{% block content %}
+    <div class="container px-4 px-lg-5">
+        
+        <h2 class="post-title">READ</h2>
+        <hr class="divider" />
+        {% for posts in posts.all %}
+        <p>제목 : <a href="{% url 'detail' posts.id %}">{{posts.title}}</a> </p>
+        <p>작성자 : {{posts.writer}}</p>
+        <p>작성 일지 및 시간 : {{ posts.pub_date }}</p>
+        {% endfor %}
+        
+    </div>
+{% endblock %}
